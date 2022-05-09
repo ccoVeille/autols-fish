@@ -23,6 +23,7 @@ function _autols --on-event fish_postexec
         # being toggled off.
         if set --query _autols_toggle_status 
             ls
+            git rev-parse --is-inside-work-tree &> /dev/null ;and git status --short --untracked-files=no .
         end
     end
 end
